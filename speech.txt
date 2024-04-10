@@ -1,0 +1,50 @@
+---------------  A STAR  ----------------
+In this era of GPS and space research we are surrounded by complex paths and interconnected travel systems that require constant navigation for reaching the required destination not only on our Earth but places in outer spaces like Moon and the planet Mars.
+
+Before we delve into A*, let's set the stage by discussing its predecessor, Dijkstra's algorithm. Dijkstra's is a classic algorithm used for finding the shortest path between nodes in a graph. However, it has its limitations, particularly in scenarios where the direction of travel and path efficiency matter.
+
+Imagine you're planning a road trip across India. Dijkstra's algorithm would meticulously explore every possible route, regardless of road type or terrain. It's like blindly following a GPS down every road, regardless of efficiency.
+
+A* algorithm builds upon Dijkstra's foundation but incorporates a heuristic approach. This heuristic guides the algorithm to prioritize paths that align with the general direction of the destination, leading to more efficient navigation.
+
+Let's illustrate this with a practical example. Imagine plotting a route on a map from point A to point B. Dijkstra's algorithm would flood-fill paths, exploring every conceivable route. In contrast, A* would intelligently prioritize paths that lead toward the goal while minimizing unnecessary exploration.
+
+Now, let's run through a simulation of A* in action. We'll step through the algorithm's process, considering both path cost and heuristic estimates. As we progress, observe how A* optimizes the search, focusing on promising paths while minimizing unnecessary exploration.
+
+This efficiency is crucial in real-world applications like GPS navigation systems, where speed and accuracy are paramount. By leveraging A* algorithm, navigation systems can provide users with faster and more accurate routes, enhancing the overall user experience.
+
+
+---------------  Best First Search  ----------------
+However A star is known for its efficiency there is another heuristic-based search algorithm known as Greedy Best First Search which is known for its quickest route finding abilities.
+
+Imagine you're in need of cash and you have to navigate to the bank, but you're unfamiliar with the area. Now, picture having a friend who knows the area well and can estimate the time it takes to reach the bank from each location. With this assistance, you can navigate more efficiently. This type of search, aided by heuristic information, is known as an informed search. Greedy Best First Search is one such algorithm that uses a heuristic function to guide the search.
+
+In Greedy Best First Search, the heuristic function estimates the time to reach the goal, helping you make informed decisions about the next node to explore. By utilizing a priority queue and maintaining open and closed lists, Greedy Best First Search efficiently selects the next node with the lowest heuristic value.
+
+Let's consider a real-world example: planning a flight from Canada to India. We can model this problem as a Greedy Best First Search, selecting flight routes based on heuristic estimates. By iteratively expanding nodes with the lowest heuristic value, we can find the most efficient route to our destination.
+
+First, we add S to the open nodes as it is the starting point.
+Since S is the only node in the open list, we expand S and add it to the closed list.
+Next, A, B, C are added to the open list. Now since C has the lowest path heuristic we expand C and add it to the closed list.
+L is now added to the open list and is chosen next as it has the lowest heuristic value.
+The nodes I, J connecting L are added to open list and L is added to the closed list.
+Now since B has the lowest heuristic value B is expanded and added to closed list.
+D and H are added to the open list.
+D has the lowest heuristic value so it's chosen next, expanded and added to the closed list.
+The connection of D that is F is added to the open list and since it has the lowest heuristic value it's expanded and added to the closed list.
+G is then added to the open list.
+G having the lowest heuristic value is expanded and we reach our final destination E.
+Here is the final solution tree with the path highlighted with green arrows.
+
+Greedy Best First Search is used in many applications from robotics to games to route plannings.
+
+Here is an example of the greedy best first search run on an example map of a game.
+
+The code implements an image reader powered by computer vision which accounts into the coordinates of black outlines as
+walls or areas not to be visited. So the white area is where the greedy search will work.
+
+Now as we run our code with the starting and ending points specified as a tuple of corrdinates in the image, we get the
+following resultant image.
+
+Now when I zoom in the picture we can clearly see the fastest route while avoiding the black walls from the starting to
+the ending point has been calculated.
